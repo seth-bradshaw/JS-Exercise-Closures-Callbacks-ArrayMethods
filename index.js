@@ -27,11 +27,11 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * counter1 is a method, and counter2 is a function to add 1 to the variable count.
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * counter2 uses closure, because it references a variable created in outer scope.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * counter1 would be better for counting for multiple methods, but counter2 is better for keeping track of a single score.
 */
 
 // counter1 code
