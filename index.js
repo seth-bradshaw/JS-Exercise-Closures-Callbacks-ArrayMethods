@@ -77,13 +77,12 @@ finalScore(inning, 9) might return:
 }
 
 */ 
-const home = 'Home';
-const away = 'Away';
-
 function finalScore(callback, innings){
+  let totalScore = {};
   for(let i = 0; i < innings; i++){
-    console.log({'Home': callback(), 'Away': callback()});
-  }
+    totalScore = {'Home': callback() + callback() +callback() + callback() + callback()+callback() + callback() +callback() + callback(), 'Away': callback() + callback() +callback() + callback() + callback()+callback() + callback() +callback() + callback()
+  };
+  return totalScore;
 }
 console.log(finalScore(inning,9))
 /* Task 4: 
@@ -109,17 +108,21 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 let home = 0;
 let away = 0;
-function scoreboard(callback1, callback2, innings) {
+
+function scoreboard(getInningScore, innings) {
   let inningNumber = 0;
-  for(let i = 0; i <= innings; i++){
+  for(let i = 0; i < innings; i++){
     inningNumber++;
-    console.log(`Inning ${inningNumber}: ${callback1}`)
+    console.log(`Inning ${inningNumber}: ${getInningScore()}`)
   }
-  let callback1 = function(){
-  let homeTeam = callback2();
-  let awayTeam = callback2();
-  return `${awayTeam} - ${homeTeam}`;
-  }
+  return `Final Score: ${home} - ${away}`;
+}
+let getInningScore = function(){
+  
+  home = home + inning();
+  away = away + inning();
+  return `${home} - ${away}`;
 }
 
-scoreboard(getInningScore, inning, 9)
+
+scoreboard(getInningScore,9);
